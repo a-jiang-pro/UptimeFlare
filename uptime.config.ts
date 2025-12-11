@@ -23,11 +23,11 @@ const workerConfig = {
       // http请求方法
       method: 'GET',
       // 目标 "是一个有效的 URL
-      target: 'https://blog.wuc0714.top',
+      target: 'https://a-jiang-pro.github.io',
       // [可选] `tooltip` 仅用于状态页面,以显示工具提示
       tooltip: '我的博客',
       // [可选] `statusPageLink` 跳转路径
-      statusPageLink: 'https://blog.wuc0714.top',
+      statusPageLink: 'https://a-jiang-pro.github.io',
       // [OPTIONAL] `expectedCodes` 成功状态值 默认是200
       expectedCodes: [200],
       // [OPTIONAL] `timeout` 超时时间
@@ -45,6 +45,7 @@ const workerConfig = {
       // refer to docs https://github.com/lyc8503/UptimeFlare/wiki/Geo-specific-checks-setup before setting this value
       // checkLocationWorkerRoute: 'https://xxx.example.com',
     },
+
     {
       id: 'erv00',
       name: 'serv00主页',
@@ -55,6 +56,44 @@ const workerConfig = {
       expectedCodes: [200],
       tooltip: 'serv00主页',
       statusPageLink: 'http://endethan.serv00.net/',
+      timeout: 10000,
+    },
+
+    {
+      id: 'gotify',
+      name: 'gotify',
+      // `method` should be `TCP_PING` for tcp monitors
+      method: 'GET',
+      // `target` should be `host:port` for tcp monitors
+      target: 'http://103.109.20.169:10962',
+      expectedCodes: [200],
+      tooltip: 'gotify消息转发',
+      statusPageLink: 'http://103.109.20.169:10962',
+      timeout: 10000,
+    },
+
+    {
+      id: 'leaflow-auto-check',
+      name: 'leaflow自动签到',
+      // `method` should be `TCP_PING` for tcp monitors
+      method: 'GET',
+      // `target` should be `host:port` for tcp monitors
+      target: 'http://103.109.20.169:10779/',
+      expectedCodes: [200],
+      tooltip: 'leaflow自动签到',
+      statusPageLink: 'http://103.109.20.169:10779/',
+      timeout: 10000,
+    },
+    {
+      id: 'temp-email',
+      name: '临时邮箱',
+      // `method` should be `TCP_PING` for tcp monitors
+      method: 'GET',
+      // `target` should be `host:port` for tcp monitors
+      target: 'https://temp-email.wuc0714.top',
+      expectedCodes: [200, 403],
+      tooltip: '临时邮箱',
+      statusPageLink: 'https://temp-email.wuc0714.top',
       timeout: 10000,
     },
 
@@ -120,18 +159,18 @@ const workerConfig = {
     }
   ],
   notification: {
-      // [可选] apprise API 服务器 URL
-      // 如果未指定,则不会发送通知
-      // appriseApiServer: "https://apprise.example.com/notify",
-      // [可选] apprise 的接收者 URL,参考 https://github.com/caronc/apprise
-      // 如果未指定,则不会发送通知
-      // recipientUrl: "tgram://bottoken/ChatID",
-      // [可选] 通知消息中使用的时区,默认为 "Etc/GMT"
-      timeZone: "Asia/Shanghai",
-      // [可选] 发送通知前的宽限期（分钟）
-      // 只有在初次故障后连续检查 N 次均失败时才会发送通知
-      // 如果未指定,则会立即发送通知
-      // gracePeriod: 5,
+    // [可选] apprise API 服务器 URL
+    // 如果未指定,则不会发送通知
+    // appriseApiServer: "https://apprise.example.com/notify",
+    // [可选] apprise 的接收者 URL,参考 https://github.com/caronc/apprise
+    // 如果未指定,则不会发送通知
+    // recipientUrl: "tgram://bottoken/ChatID",
+    // [可选] 通知消息中使用的时区,默认为 "Etc/GMT"
+    timeZone: "Asia/Shanghai",
+    // [可选] 发送通知前的宽限期（分钟）
+    // 只有在初次故障后连续检查 N 次均失败时才会发送通知
+    // 如果未指定,则会立即发送通知
+    // gracePeriod: 5,
 
   },
   callbacks: {
