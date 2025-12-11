@@ -56,6 +56,7 @@ const workerConfig = {
       tooltip: 'My Github Star',
       statusPageLink: 'https://star.wuc0714.top',
       timeout: 10000,
+      
     },
     {
       id: 'erv00',
