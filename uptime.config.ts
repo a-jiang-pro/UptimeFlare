@@ -66,7 +66,7 @@ const workerConfig = {
       method: 'GET',
       // `target` should be `host:port` for tcp monitors
       target: 'http://103.109.20.169:10962',
-      expectedCodes: [200],
+      expectedCodes: [200, 403],
       tooltip: 'gotify消息转发',
       statusPageLink: 'http://103.109.20.169:10962',
       timeout: 10000,
@@ -79,7 +79,7 @@ const workerConfig = {
       method: 'GET',
       // `target` should be `host:port` for tcp monitors
       target: 'http://103.109.20.169:10779/',
-      expectedCodes: [200],
+      expectedCodes: [200, 403],
       tooltip: 'leaflow自动签到',
       statusPageLink: 'http://103.109.20.169:10779/',
       timeout: 10000,
